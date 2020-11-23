@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react",
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["es6", "dom"],
+    "rootDir": ".",
+    "declaration": false,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@styles/*": ["styles/*"],
+      "@components": ["components"],
+      "@firebase": ["firebase"],
+    },
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules", "dist"]
+}
