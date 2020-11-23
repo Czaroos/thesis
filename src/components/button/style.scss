@@ -1,0 +1,25 @@
+@use '../../styles/variables' as v;
+
+.button {
+  padding: 8px 16px;
+  margin: 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: v.$white;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.2rem;
+
+  > svg {
+    font-size: 2rem;
+    fill: v.$primary-dark;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    color: v.$grey;
+  }
+}
