@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Navbar } from "@components";
+import Modules from "./modules";
 
 import "@styles/_global.scss";
 
 const App = () => {
-  return <Navbar />;
+  return <Modules />;
 };
 
 export default App;
