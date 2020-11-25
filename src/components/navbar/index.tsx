@@ -16,25 +16,25 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Button onClick={() => history.replace("/")}>
-        <HomeIcon />
+      <Button className="active" onClick={() => history.replace("/")}>
         HOME
+        <HomeIcon />
       </Button>
       <Button onClick={() => history.replace("/sorting")}>
-        <SortIcon />
         SORTING
+        <SortIcon />
       </Button>
       <Button onClick={() => history.replace("/b-trees")}>
-        <AccountTreeIcon />
         B-TREES
+        <AccountTreeIcon />
       </Button>
       <Button onClick={() => history.replace("/queue")}>
-        <SupervisorAccountIcon />
         QUEUE
+        <SupervisorAccountIcon />
       </Button>
       <Button onClick={() => history.replace("/lists")}>
-        <ListIcon />
         LISTS
+        <ListIcon />
       </Button>
     </nav>
   );

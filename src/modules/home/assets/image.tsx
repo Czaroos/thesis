@@ -6,10 +6,8 @@ export const Image = () => {
       id="abfc9406-9725-4cb2-b46b-8486a730651f"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
-      height="834.6893"
       viewBox="0 0 1171 834.6893"
     >
-      <title>detailed_analysis</title>
       <polygon
         points="1124.08 191.421 652.66 394.045 720.59 581.379 769.139 715.243 781.344 748.911 889.978 790.144 893.906 791.633 1007.385 834.689 1061.859 811.391 1136.069 779.493 1171 764.479 1124.08 191.421"
         fill="#f2f2f2"
@@ -78,7 +76,7 @@ export const Image = () => {
         transform="translate(-14.5 -32.65535)"
         fill="#ffb8b8"
       />
-      <rect x="1" y="134.83258" width="195" height="87.16742" fill="#f2f2f2" />
+      <rect x="1" y="134.83258" width="195" height="87.16742" fill="#3f3d56" />
       <rect x="676" y="418" width="34" height="30" fill="#3f3d56" />
       <rect x="608" y="418" width="34" height="30" fill="#3f3d56" />
       <rect x="744" y="352" width="34" height="34" fill="#515751" />
@@ -128,21 +126,21 @@ export const Image = () => {
         y="162.34685"
         width="94.11111"
         height="2.13889"
-        fill="#3f3d56"
+        fill="#fff"
       />
       <rect
         x="51.44444"
         y="177.34685"
         width="94.11111"
         height="2.13889"
-        fill="#3f3d56"
+        fill="#fff"
       />
       <rect
         x="51.44444"
         y="192.34685"
         width="94.11111"
         height="2.13889"
-        fill="#3f3d56"
+        fill="#fff"
       />
       <rect
         x="578.44444"
@@ -236,8 +234,8 @@ export const Image = () => {
         fill="#3f3d56"
       />
       <rect
-        x="329.44444"
-        y="114.34685"
+        x="332.44444"
+        y="116.34685"
         width="94.11111"
         height="2.13889"
         fill="#3f3d56"

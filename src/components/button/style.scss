@@ -4,16 +4,16 @@
   padding: 8px 16px;
   margin: 16px;
   display: flex;
-  align-items: center;
-  background: transparent;
+  justify-content: flex-end;
+  align-items: flex-end;
   color: v.$white;
   cursor: pointer;
   user-select: none;
 
   > svg {
     font-size: 1.5rem;
-    fill: v.$primary-dark;
-    margin-right: 8px;
+    fill: rgba(0, 0, 0, 0.5);
+    margin-left: 16px;
   }
 
   &:hover {
