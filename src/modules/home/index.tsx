@@ -2,7 +2,7 @@ import React from "react";
 
 import { Navbar } from "@components";
 
-import { Image, Logo, Rectangle, Wave } from "./assets";
+import { Image, Logo, Rectangle, Wave, WaveBackground } from "@assets";
 
 import "./style.scss";
 
@@ -19,7 +19,7 @@ const Home = () => {
           </h4>
         </div>
       </div>
-      <Navbar />
+      <Navbar className="col" />
       <Image />
       <Wave />
       <Wave />
@@ -28,6 +28,7 @@ const Home = () => {
       <Rectangle />
       <Logo />
       <Logo />
+      <WaveBackground />
     </div>
   );
 };

@@ -17,6 +17,10 @@
   display: flex;
   overflow: hidden;
 
+  .links {
+    flex-flow: column;
+  }
+
   .main {
     display: flex;
     flex-grow: 1;
@@ -99,10 +103,29 @@
       right: 15%;
     }
 
-    &:last-of-type {
+    &:nth-of-type(8) {
       width: 20%;
-      bottom: -16%;
+      bottom: -5%;
       left: 0;
     }
+
+    &:last-of-type {
+      width: 125%;
+      transform: rotate(180deg);
+      bottom: -5%;
+      fill: #fff;
+      animation: wave 10s ease-out infinite normal;
+    }
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(178deg);
+  }
+
+  50% {
+    transform: rotate(182deg);
   }
 }
