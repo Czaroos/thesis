@@ -15,45 +15,44 @@ import "./style.scss";
 
 export const Navbar = ({ className }: NavbarProps) => {
   const history = useHistory();
-  const location = useLocation();
-  console.log(location);
+  const { pathname } = useLocation();
 
   return (
     <nav className={`navbar ${className ? className : ""}`}>
-      {location.pathname !== "/" && (
-        <h2>{location.pathname.substring(1).toUpperCase()}</h2>
+      {pathname !== "/" && (
+        <h2>{pathname.substring(1).toUpperCase().replace("/", " > ")}</h2>
       )}
       <div className="links">
         <Button
-          className={`${location.pathname === "/" ? "active" : ""}`}
+          className={`${pathname === "/" ? "active" : ""}`}
           onClick={() => history.replace("/")}
         >
           HOME
           <HomeIcon />
         </Button>
         <Button
-          className={`${location.pathname === "/sorting" ? "active" : ""}`}
+          className={`${pathname.includes("/sorting") ? "active" : ""}`}
           onClick={() => history.replace("/sorting")}
         >
           SORTING
           <SortIcon />
         </Button>
         <Button
-          className={`${location.pathname === "/b-trees" ? "active" : ""}`}
+          className={`${pathname.includes("/b-trees") ? "active" : ""}`}
           onClick={() => history.replace("/b-trees")}
         >
           B-TREES
           <AccountTreeIcon />
         </Button>
         <Button
-          className={`${location.pathname === "/queue" ? "active" : ""}`}
+          className={`${pathname.includes("/queue") ? "active" : ""}`}
           onClick={() => history.replace("/queue")}
         >
           QUEUE
           <SupervisorAccountIcon />
         </Button>
         <Button
-          className={`${location.pathname === "/lists" ? "active" : ""}`}
+          className={`${pathname.includes("/lists") ? "active" : ""}`}
           onClick={() => history.replace("/lists")}
         >
           LISTS

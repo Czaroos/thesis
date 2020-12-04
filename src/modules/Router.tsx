@@ -9,6 +9,10 @@ const Router = () => {
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/sorting" component={Sorting} />
+      <Route exact path="/sorting/merge" component={Sorting} />
+      <Route exact path="/sorting/bubble" component={Sorting} />
+      <Route exact path="/sorting/quick" component={Sorting} />
+      <Route exact path="/sorting/insertion" component={Sorting} />
     </Switch>
   );
 };

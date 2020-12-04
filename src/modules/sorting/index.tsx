@@ -1,17 +1,14 @@
 import React from "react";
 
-import { Navbar } from "@components";
+import { Layout } from "@components";
 
-import { Wave } from "@assets";
+import { SortingSidebar } from "./sidebar";
 
 import "./style.scss";
 
 const Sorting = () => {
   return (
-    <div className="sorting">
-      <Wave />
-      <Navbar className="subpageNav" />
-    </div>
+    <Layout sidebarChildren={<SortingSidebar />} contentChildren={<div />} />
   );
 };
 
