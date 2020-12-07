@@ -1,0 +1,57 @@
+@use '../../styles/variables' as v;
+
+.chart {
+  width: 100%;
+  background: transparent;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  min-height: 300px;
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+
+  .chartColumn {
+    width: 20px;
+    background: v.$details;
+  }
+
+  .current {
+    background: v.$secondary-details;
+  }
+
+  .next {
+    background: v.$primary-dark;
+  }
+
+  .prevSwap {
+    animation: prevSwap 0.6s;
+  }
+
+  .nextSwap {
+    animation: nextSwap 0.6s;
+  }
+
+  @keyframes prevSwap {
+    0% {
+      transform: translateY(0%);
+    }
+    33% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateX(150%);
+    }
+  }
+
+  @keyframes nextSwap {
+    0% {
+      transform: translateY(0%);
+    }
+    33% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateX(-150%);
+    }
+  }
+}
