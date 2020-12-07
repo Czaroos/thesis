@@ -2,17 +2,19 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Home from "./home";
-import Sorting from "./sorting";
+import SortingRouter from "./sorting";
+import BTrees from "./b-trees";
+import Lists from "./lists";
+import Queue from "./queue";
 
 const Router = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/sorting" component={Sorting} />
-      <Route exact path="/sorting/merge" component={Sorting} />
-      <Route exact path="/sorting/bubble" component={Sorting} />
-      <Route exact path="/sorting/quick" component={Sorting} />
-      <Route exact path="/sorting/insertion" component={Sorting} />
+      <SortingRouter />
+      <Route exact path="/b-trees" component={BTrees} />
+      <Route exact path="/lists" component={Lists} />
+      <Route exact path="/queue" component={Queue} />
     </Switch>
   );
 };
