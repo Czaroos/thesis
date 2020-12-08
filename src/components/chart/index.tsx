@@ -20,7 +20,7 @@ export const Chart = ({ numbers, index, next }: ChartProps) => {
             key={idx}
             ref={column}
             style={{
-              height: `${number * 4}px`,
+              height: `${number * 8}px`,
               marginRight: `${
                 column.current?.offsetWidth
                   ? column.current.offsetWidth / 2

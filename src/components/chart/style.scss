@@ -5,13 +5,16 @@
   background: transparent;
   border-left: 1px solid white;
   border-bottom: 1px solid white;
-  min-height: 300px;
   display: flex;
   flex-flow: row;
   align-items: flex-end;
+  min-height: 300px;
+  margin: 16px 0;
+  overflow: hidden;
 
   .chartColumn {
     width: 20px;
+    min-width: 1px;
     background: v.$details;
   }
 
@@ -24,11 +27,11 @@
   }
 
   .prevSwap {
-    animation: prevSwap 0.6s;
+    animation: prevSwap 0.4s;
   }
 
   .nextSwap {
-    animation: nextSwap 0.6s;
+    animation: nextSwap 0.4s;
   }
 
   @keyframes prevSwap {

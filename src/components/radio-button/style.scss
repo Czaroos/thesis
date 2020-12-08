@@ -1,0 +1,13 @@
+@use '../../styles/variables' as v;
+
+.radioButton {
+  height: 16px;
+  width: 16px;
+  border: 1px solid v.$black;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &.activeRadio {
+    background: v.$details;
+  }
+}
