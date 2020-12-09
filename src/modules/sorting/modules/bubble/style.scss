@@ -1,13 +1,25 @@
 @use '../../../../styles/variables' as v;
 
-.col {
-  width: 85%;
-}
-
 .bubble {
-  padding: 32px;
   width: 100%;
   overflow: auto;
+  display: flex;
+  flex-flow: column;
+
+  .bubbleContent {
+    padding: 32px;
+    display: flex;
+    flex-flow: column;
+
+    > h2 {
+      color: v.$white;
+    }
+  }
+
+  .active {
+    font-weight: 1000;
+    color: v.$secondary-details;
+  }
 
   .radioGroup {
     display: grid;
@@ -28,9 +40,5 @@
   .actionButtons {
     display: flex;
     flex-grow: 1;
-  }
-
-  > h2 {
-    color: v.$white;
   }
 }

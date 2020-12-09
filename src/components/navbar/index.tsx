@@ -20,7 +20,13 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <nav className={`navbar ${className ? className : ""}`}>
       {pathname !== "/" && (
-        <h2>{pathname.substring(1).toUpperCase().replace("/", " > ")}</h2>
+        <h2>
+          {pathname
+            .substring(1)
+            .toUpperCase()
+            .replace(/\//g, " > ")
+            .replace(/-/g, " ")}
+        </h2>
       )}
       <div className="links">
         <Button

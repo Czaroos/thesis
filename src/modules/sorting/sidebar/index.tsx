@@ -10,25 +10,27 @@ export const SortingSidebar = () => {
   return (
     <>
       <Button
-        className={`${pathname === "/sorting/merge" ? "active" : ""}`}
+        className={`${pathname.startsWith("/sorting/merge") ? "active" : ""}`}
         onClick={() => history.push(`/sorting/merge`)}
       >
         MERGE SORT
       </Button>
       <Button
-        className={`${pathname === "/sorting/bubble" ? "active" : ""}`}
-        onClick={() => history.push("/sorting/bubble")}
+        className={`${pathname.startsWith("/sorting/bubble") ? "active" : ""}`}
+        onClick={() => history.push("/sorting/bubble/random")}
       >
         BUBBLE SORT
       </Button>
       <Button
-        className={`${pathname === "/sorting/quick" ? "active" : ""}`}
+        className={`${pathname.startsWith("/sorting/quick") ? "active" : ""}`}
         onClick={() => history.push("/sorting/quick")}
       >
         QUICK SORT
       </Button>
       <Button
-        className={`${pathname === "/sorting/insertion" ? "active" : ""}`}
+        className={`${
+          pathname.startsWith("/sorting/insertion") ? "active" : ""
+        }`}
         onClick={() => history.push("/sorting/insertion")}
       >
         INSERTION SORT
