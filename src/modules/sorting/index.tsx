@@ -9,6 +9,8 @@ import Home from "./modules/home";
 import Merge from "./modules/merge";
 import Bubble from "./modules/bubble";
 
+import BubbleHome from "./modules/bubble/home";
+
 const SortingRouter = () => {
   return (
     <Switch>
@@ -29,6 +31,16 @@ const SortingRouter = () => {
           <Layout
             sidebarChildren={<SortingSidebar />}
             contentChildren={<Merge />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/bubble"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
+            contentChildren={<BubbleHome />}
           />
         )}
       />
@@ -75,7 +87,7 @@ const SortingRouter = () => {
       <Route
         exact
         path="/sorting/bubble/**"
-        component={() => <Redirect to="/sorting/bubble/random" />}
+        component={() => <Redirect to="/sorting/bubble" />}
       />
       <Route
         exact

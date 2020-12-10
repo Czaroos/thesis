@@ -5,3 +5,5 @@ export * from "./sidebar";
 export * from "./layout";
 export * from "./radio-button";
 export * from "./heading";
+export * from "./card";
+export * from "./table";

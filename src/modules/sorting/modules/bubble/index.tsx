@@ -3,6 +3,8 @@ import { useHistory, useLocation } from "react-router-dom";
 
 import { Chart, Button, RadioButton, Heading } from "@components";
 
+import { addBubbleRecord, Record } from "@firebase";
+
 import {
   bubbleTimed,
   getRandom,
@@ -76,6 +78,22 @@ const Random = () => {
       const nums = [...numbers];
       const { time } = bubbleTimed(nums);
       setTime(time);
+
+      try {
+        const path = pathname.substring(1).split("/");
+        const category = path[2];
+
+        const record: Record = {
+          category,
+          count,
+          time,
+        };
+
+        await addBubbleRecord(record);
+      } catch (err) {
+        alert(`An error occured adding record to database: ${err.message}`);
+      }
+
       const result = await animateBubbleSort(numbers);
       setNumbers(result);
     }
@@ -90,7 +108,10 @@ const Random = () => {
       <Heading>
         <Button
           className={`${pathname === "/sorting/bubble/random" ? "active" : ""}`}
-          onClick={() => history.push("/sorting/bubble/random")}
+          onClick={() =>
+            pathname !== "/sorting/bubble/random" &&
+            history.push("/sorting/bubble/random")
+          }
         >
           RANDOM
         </Button>
@@ -98,7 +119,10 @@ const Random = () => {
           className={`${
             pathname === "/sorting/bubble/nearly-sorted" ? "active" : ""
           }`}
-          onClick={() => history.push("/sorting/bubble/nearly-sorted")}
+          onClick={() =>
+            pathname !== "/sorting/bubble/nearly-sorted" &&
+            history.push("/sorting/bubble/nearly-sorted")
+          }
         >
           NEARLY SORTED
         </Button>
@@ -106,7 +130,10 @@ const Random = () => {
           className={`${
             pathname === "/sorting/bubble/reversed" ? "active" : ""
           }`}
-          onClick={() => history.push("/sorting/bubble/reversed")}
+          onClick={() =>
+            pathname !== "/sorting/bubble/reversed" &&
+            history.push("/sorting/bubble/reversed")
+          }
         >
           REVERSED
         </Button>
@@ -114,7 +141,10 @@ const Random = () => {
           className={`${
             pathname === "/sorting/bubble/few-unique" ? "active" : ""
           }`}
-          onClick={() => history.push("/sorting/bubble/few-unique")}
+          onClick={() =>
+            pathname !== "/sorting/bubble/few-unique" &&
+            history.push("/sorting/bubble/few-unique")
+          }
         >
           FEW UNIQUE
         </Button>

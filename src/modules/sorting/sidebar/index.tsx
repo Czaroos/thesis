@@ -11,19 +11,27 @@ export const SortingSidebar = () => {
     <>
       <Button
         className={`${pathname.startsWith("/sorting/merge") ? "active" : ""}`}
-        onClick={() => history.push(`/sorting/merge`)}
+        onClick={() =>
+          !pathname.startsWith("/sorting/merge") &&
+          history.push(`/sorting/merge`)
+        }
       >
         MERGE SORT
       </Button>
       <Button
         className={`${pathname.startsWith("/sorting/bubble") ? "active" : ""}`}
-        onClick={() => history.push("/sorting/bubble/random")}
+        onClick={() =>
+          pathname !== "/sorting/bubble" && history.push("/sorting/bubble")
+        }
       >
         BUBBLE SORT
       </Button>
       <Button
         className={`${pathname.startsWith("/sorting/quick") ? "active" : ""}`}
-        onClick={() => history.push("/sorting/quick")}
+        onClick={() =>
+          !pathname.startsWith("/sorting/quick") &&
+          history.push("/sorting/quick")
+        }
       >
         QUICK SORT
       </Button>
@@ -31,7 +39,10 @@ export const SortingSidebar = () => {
         className={`${
           pathname.startsWith("/sorting/insertion") ? "active" : ""
         }`}
-        onClick={() => history.push("/sorting/insertion")}
+        onClick={() =>
+          !pathname.startsWith("/sorting/insertion") &&
+          history.push("/sorting/insertion")
+        }
       >
         INSERTION SORT
       </Button>

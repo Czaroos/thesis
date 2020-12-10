@@ -1,0 +1,20 @@
+@use '../../styles/variables' as v;
+
+.card {
+  padding: 8px 0 4px 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 4px;
+
+  > h5 {
+    color: v.$primary-dark;
+    margin-bottom: 2px;
+  }
+
+  > h6 {
+    margin-bottom: 4px;
+  }
+}
