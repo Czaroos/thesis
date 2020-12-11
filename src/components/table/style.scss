@@ -1,12 +1,22 @@
+@use '../../styles/variables' as v;
+
 .table {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: v.$white;
   width: 100%;
   row-gap: 8px;
   column-gap: 8px;
   padding: 32px;
+
+  .countHeading {
+    color: v.$primary-dark;
+  }
+
+  .categoryHeading {
+    color: v.$primary;
+  }
 }

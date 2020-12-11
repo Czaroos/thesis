@@ -14,7 +14,6 @@ export const getNearlySorted = (count: number) => {
       : count - 4;
 
   for (let i = sorted.length - 1; i > swaps; i--) {
-    console.log(i);
     const j = Math.floor(Math.random() * (i + 1));
     [sorted[i], sorted[j]] = [sorted[j], sorted[i]];
   }

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import { getBubbleRecords, Record } from "@firebase";
+import {
+  getRecords,
+  Record,
+  getCategoryOverall,
+  getCountOverall,
+} from "@firebase";
 
 import { CardProps } from "./model";
 
@@ -18,15 +23,25 @@ export const Card = ({ category, count, sort }: CardProps) => {
 
   useEffect(() => {
     (async () => {
-      // switch depending on sort
-      const res = await getBubbleRecords(category, count);
+      let res: any;
+
+      if (category && !count) {
+        res = await getCategoryOverall(category, sort);
+      } else if (count && !category) {
+        res = await getCountOverall(count, sort);
+      } else if (count && category) {
+        res = await getRecords(category, count, sort);
+      }
+
       setResults(res!);
       setLoading(false);
     })();
   }, []);
 
   return !loading ? (
-    <div className="card">
+    <div
+      className={`card ${!category ? "count" : ""} ${!count ? "category" : ""}`}
+    >
       <h5>QUICKEST</h5>
       <h6>{results[0].time} ms</h6>
       <h5>SLOWEST</h5>

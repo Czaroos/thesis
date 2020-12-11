@@ -9,6 +9,14 @@
   border: 1px solid black;
   border-radius: 4px;
 
+  &.count {
+    border: 1px solid v.$primary-dark;
+  }
+
+  &.category {
+    border: 1px solid v.$primary;
+  }
+
   > h5 {
     color: v.$primary-dark;
     margin-bottom: 2px;

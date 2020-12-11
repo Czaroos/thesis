@@ -3,7 +3,7 @@ import { useHistory, useLocation } from "react-router-dom";
 
 import { Chart, Button, RadioButton, Heading } from "@components";
 
-import { addBubbleRecord, Record } from "@firebase";
+import { addRecord, Record } from "@firebase";
 
 import {
   bubbleTimed,
@@ -16,7 +16,7 @@ import {
 
 import "./style.scss";
 
-const Random = () => {
+const Bubble = () => {
   const [numbers, setNumbers] = useState<number[]>([]);
   const [index, setIndex] = useState<number>();
   const [next, setNext] = useState<number>();
@@ -81,6 +81,7 @@ const Random = () => {
 
       try {
         const path = pathname.substring(1).split("/");
+        const sort = path[1];
         const category = path[2];
 
         const record: Record = {
@@ -89,7 +90,7 @@ const Random = () => {
           time,
         };
 
-        await addBubbleRecord(record);
+        await addRecord(record, sort);
       } catch (err) {
         alert(`An error occured adding record to database: ${err.message}`);
       }
@@ -161,22 +162,22 @@ const Random = () => {
           <RadioButton
             value={20}
             globalVal={count}
-            onClick={() => setCount(20)}
+            onClick={() => !index && setCount(20)}
           />
           <RadioButton
             value={30}
             globalVal={count}
-            onClick={() => setCount(30)}
+            onClick={() => !index && setCount(30)}
           />
           <RadioButton
             value={40}
             globalVal={count}
-            onClick={() => setCount(40)}
+            onClick={() => !index && setCount(40)}
           />
           <RadioButton
             value={50}
             globalVal={count}
-            onClick={() => setCount(50)}
+            onClick={() => !index && setCount(50)}
           />
         </div>
         <Chart numbers={numbers} index={index} next={next} />
@@ -192,4 +193,4 @@ const Random = () => {
   );
 };
 
-export default Random;
+export default Bubble;
