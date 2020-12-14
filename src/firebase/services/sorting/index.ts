@@ -30,7 +30,7 @@ export const getRecords = async (
 
     return result;
   } catch (err) {
-    alert(err);
+    console.log(err);
     return;
   }
 };
@@ -51,7 +51,7 @@ export const getCountOverall = async (count: number, sort: string) => {
 
     return result;
   } catch (err) {
-    alert(err);
+    console.log(err);
     return;
   }
 };
@@ -72,7 +72,7 @@ export const getCategoryOverall = async (category: string, sort: string) => {
 
     return result;
   } catch (err) {
-    alert(err);
+    console.log(err);
     return;
   }
 };

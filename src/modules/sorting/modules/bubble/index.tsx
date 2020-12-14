@@ -22,6 +22,7 @@ const Bubble = () => {
   const [next, setNext] = useState<number>();
   const [time, setTime] = useState<number>(0);
   const [count, setCount] = useState<number>(20);
+  const [run, setRun] = useState(false);
 
   const history = useHistory();
   const { pathname } = useLocation();
@@ -54,10 +55,10 @@ const Bubble = () => {
       swapped = false;
       for (let i = 0; i < len; i++) {
         setIndex(i);
-        await sleep(100).then(async () => {
+        await sleep(45).then(async () => {
           if (inputArr[i] > inputArr[i + 1]) {
             setNext(i + 1);
-            await sleep(350).then(() => {
+            await sleep(150).then(() => {
               let tmp = inputArr[i];
               inputArr[i] = inputArr[i + 1];
               inputArr[i + 1] = tmp;
@@ -74,7 +75,8 @@ const Bubble = () => {
   };
 
   const handleSort = async () => {
-    if (!index) {
+    if (!run) {
+      setRun(true);
       const nums = [...numbers];
       const { time } = bubbleTimed(nums);
       setTime(time);
@@ -97,6 +99,7 @@ const Bubble = () => {
 
       const result = await animateBubbleSort(numbers);
       setNumbers(result);
+      sleep(500).then(() => handleReset());
     }
   };
 
@@ -162,22 +165,22 @@ const Bubble = () => {
           <RadioButton
             value={20}
             globalVal={count}
-            onClick={() => !index && setCount(20)}
+            onClick={() => !run && setCount(20)}
           />
           <RadioButton
             value={30}
             globalVal={count}
-            onClick={() => !index && setCount(30)}
+            onClick={() => !run && setCount(30)}
           />
           <RadioButton
             value={40}
             globalVal={count}
-            onClick={() => !index && setCount(40)}
+            onClick={() => !run && setCount(40)}
           />
           <RadioButton
             value={50}
             globalVal={count}
-            onClick={() => !index && setCount(50)}
+            onClick={() => !run && setCount(50)}
           />
         </div>
         <Chart numbers={numbers} index={index} next={next} />

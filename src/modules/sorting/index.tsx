@@ -9,7 +9,7 @@ import Home from "./modules/home";
 import Merge from "./modules/merge";
 import Bubble from "./modules/bubble";
 
-import BubbleHome from "./modules/bubble/home";
+import SortHome from "./modules/sort-home";
 
 const SortingRouter = () => {
   return (
@@ -30,6 +30,46 @@ const SortingRouter = () => {
         component={() => (
           <Layout
             sidebarChildren={<SortingSidebar />}
+            contentChildren={<SortHome sort="merge" />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/merge/random"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
+            contentChildren={<Merge />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/merge/nearly-sorted"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
+            contentChildren={<Merge />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/merge/reversed"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
+            contentChildren={<Merge />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/merge/few-unique"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
             contentChildren={<Merge />}
           />
         )}
@@ -40,7 +80,7 @@ const SortingRouter = () => {
         component={() => (
           <Layout
             sidebarChildren={<SortingSidebar />}
-            contentChildren={<BubbleHome />}
+            contentChildren={<SortHome sort="bubble" />}
           />
         )}
       />

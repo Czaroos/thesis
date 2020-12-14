@@ -4,7 +4,14 @@ import { ChartProps } from "./model";
 
 import "./style.scss";
 
-export const Chart = ({ numbers, index, next }: ChartProps) => {
+export const Chart = ({
+  numbers,
+  index,
+  next,
+  leftBoundary,
+  rightBoundary,
+  middle,
+}: ChartProps) => {
   const column = useRef<HTMLDivElement>(null);
 
   return (
@@ -13,9 +20,15 @@ export const Chart = ({ numbers, index, next }: ChartProps) => {
         return (
           <div
             className={`chartColumn ${
-              index === idx ? "current" : index! + 1 === idx ? "next" : ""
+              index === idx && !leftBoundary
+                ? "current"
+                : index! + 1 === idx && !leftBoundary
+                ? "next"
+                : ""
             } ${next === idx ? "nextSwap" : ""} ${
               next && index === idx ? "prevSwap" : ""
+            } ${leftBoundary && leftBoundary === idx ? "current" : ""} ${
+              rightBoundary && rightBoundary + middle! - 1 === idx ? "next" : ""
             }`}
             key={idx}
             ref={column}

@@ -1,0 +1,44 @@
+@use '../../../../styles/variables' as v;
+
+.merge {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-flow: column;
+
+  .mergeContent {
+    padding: 32px;
+    display: flex;
+    flex-flow: column;
+
+    > h2 {
+      color: v.$white;
+    }
+  }
+
+  .active {
+    font-weight: 1000;
+    color: v.$secondary-details;
+  }
+
+  .radioGroup {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+
+    > h3 {
+      color: v.$white;
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+    flex-grow: 1;
+  }
+}
