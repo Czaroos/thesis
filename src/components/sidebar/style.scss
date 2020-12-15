@@ -4,15 +4,29 @@
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  border-right: 1px solid v.$white;
   height: 100%;
-  padding: 32px 16px 32px 0;
+  padding: 32px 16px;
   min-width: 15%;
   z-index: 2;
   background: rgba(0, 0, 0, 0.2);
+  position: relative;
 
   .active {
     color: v.$secondary-details;
     font-weight: 1000;
+  }
+
+  .homeActive {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+  }
+
+  .separator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    background: white;
+    height: 300vh;
   }
 }

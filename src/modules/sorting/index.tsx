@@ -8,6 +8,7 @@ import { SortingSidebar } from "./sidebar";
 import Home from "./modules/home";
 import Merge from "./modules/merge";
 import Bubble from "./modules/bubble";
+import Insertion from "./modules/insertion";
 
 import SortHome from "./modules/sort-home";
 
@@ -73,6 +74,11 @@ const SortingRouter = () => {
             contentChildren={<Merge />}
           />
         )}
+      />
+      <Route
+        exact
+        path="/sorting/merge/**"
+        component={() => <Redirect to="/sorting/merge" />}
       />
       <Route
         exact
@@ -145,9 +151,54 @@ const SortingRouter = () => {
         component={() => (
           <Layout
             sidebarChildren={<SortingSidebar />}
-            contentChildren={<Home />}
+            contentChildren={<SortHome sort="insertion" />}
           />
         )}
+      />
+      <Route
+        exact
+        path="/sorting/insertion/random"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
+            contentChildren={<Insertion />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/insertion/nearly-sorted"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
+            contentChildren={<Insertion />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/insertion/reversed"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
+            contentChildren={<Insertion />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/insertion/few-unique"
+        component={() => (
+          <Layout
+            sidebarChildren={<SortingSidebar />}
+            contentChildren={<Insertion />}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sorting/insertion/**"
+        component={() => <Redirect to="/sorting/insertion" />}
       />
     </Switch>
   );
