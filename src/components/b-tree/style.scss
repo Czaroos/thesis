@@ -1,0 +1,17 @@
+.tree {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 48px;
+
+  &:first-of-type {
+    margin-top: 24px;
+  }
+}

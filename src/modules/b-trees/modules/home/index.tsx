@@ -1,7 +1,9 @@
 import React from "react";
 
+import { BTree } from "@components";
+
 const Home = () => {
-  return <div></div>;
+  return <BTree />;
 };
 
 export default Home;

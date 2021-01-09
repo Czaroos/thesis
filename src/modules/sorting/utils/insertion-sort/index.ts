@@ -1,9 +1,10 @@
 function insertionSort(inputArr: number[]) {
   let n = inputArr.length;
+
   for (let i = 1; i < n; i++) {
-    // Choosing the first element in our unsorted subarray
+    // Pierwszy element w nieposortowanym zbiorze
     let current = inputArr[i];
-    // The last element of our sorted subarray
+    // Ostatni element w posortowanym zbiorze
     let j = i - 1;
     while (j > -1 && current < inputArr[j]) {
       inputArr[j + 1] = inputArr[j];

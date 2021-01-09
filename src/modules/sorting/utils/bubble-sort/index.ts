@@ -1,6 +1,7 @@
 const bubbleSort = (inputArr: number[]) => {
   let len = inputArr.length;
   let swapped;
+
   do {
     swapped = false;
     for (let i = 0; i < len; i++) {
