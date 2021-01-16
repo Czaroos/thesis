@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { NodeProps } from "./model";
 
@@ -10,8 +10,16 @@ export const Node = ({
   leftChildren,
   rightChildren,
 }: NodeProps) => {
+  const [visited, setVisited] = useState(false);
+
+  useEffect(() => {
+    active && setVisited(true);
+  }, [active]);
+
   return (
-    <div className={`node ${active ? "active" : ""}`}>
+    <div
+      className={`node ${visited ? "visited" : ""} ${active ? "active" : ""}`}
+    >
       <>
         {leftChildren && (
           <div
