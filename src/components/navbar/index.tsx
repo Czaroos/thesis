@@ -50,7 +50,7 @@ export const Navbar = ({ className }: NavbarProps) => {
           B-TREES
           <AccountTreeIcon />
         </Button>
-        <Button
+        {/* <Button
           className={`${pathname.includes("/queue") ? "active" : ""}`}
           onClick={() => history.replace("/queue")}
         >
@@ -63,7 +63,7 @@ export const Navbar = ({ className }: NavbarProps) => {
         >
           LISTS
           <ListIcon />
-        </Button>
+        </Button> */}
       </div>
     </nav>
   );

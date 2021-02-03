@@ -18,12 +18,7 @@ const SortingRouter = () => {
       <Route
         exact
         path="/sorting"
-        component={() => (
-          <Layout
-            sidebarChildren={<SortingSidebar />}
-            contentChildren={<Home />}
-          />
-        )}
+        component={() => <Redirect to="sorting/merge" />}
       />
       <Route
         exact

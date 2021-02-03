@@ -25,14 +25,14 @@ export const SortingSidebar = () => {
       >
         BUBBLE SORT
       </Button>
-      <Button
+      {/* <Button
         className={`${pathname.startsWith("/sorting/quick") ? "active" : ""} ${
           pathname === "/sorting/quick" ? "homeActive" : ""
         }`}
         onClick={() => history.push("/sorting/quick")}
       >
         QUICK SORT
-      </Button>
+      </Button> */}
       <Button
         className={`${
           pathname.startsWith("/sorting/insertion") ? "active" : ""

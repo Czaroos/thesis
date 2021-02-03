@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 import Home from "./home";
 import SortingRouter from "./sorting";
@@ -13,8 +13,9 @@ const Router = () => {
       <Route exact path="/" component={Home} />
       <BTreesRouter />
       <SortingRouter />
-      <Route exact path="/lists" component={Lists} />
-      <Route exact path="/queue" component={Queue} />
+      <Route path="**" component={() => <Redirect to="/" />} />
+      {/* <Route exact path="/lists" component={Lists} />
+      <Route exact path="/queue" component={Queue} /> */}
     </>
   );
 };
