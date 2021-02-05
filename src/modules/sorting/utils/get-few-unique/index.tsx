@@ -3,7 +3,7 @@ import { getRandom } from "..";
 export const getFewUnique = (count: number) => {
   const maxUniques = 5;
 
-  const random = getRandom({ count: 12 });
+  const random = getRandom({ count: 10 });
 
   let fewUnique: number[] = [];
 

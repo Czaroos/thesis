@@ -13,7 +13,6 @@ const Router = () => {
       <Route exact path="/" component={Home} />
       <BTreesRouter />
       <SortingRouter />
-      <Route path="**" component={() => <Redirect to="/" />} />
       {/* <Route exact path="/lists" component={Lists} />
       <Route exact path="/queue" component={Queue} /> */}
     </>
